@@ -77,6 +77,12 @@ button.addEventListener('click', () => {
 </div>
 */
 
+const elementCreator = (element, name, append ) => {
+	let element = document.createElement(element);
+	element.classList.add(name)
+	append.appendChild(element);
+}
+
 const cardCreator = (obj) => {
 	// create the card div element
 	const card = document.createElement('div');
