@@ -105,10 +105,7 @@ const cardCreator = (obj) => {
 	const userName = itemCreator('p', cardInfo, 'username', obj.login);
 
 	// Create the location p
-	const location = document.createElement('p');
-	location.classList.add('location');
-	location.textContent = obj.location;
-	cardInfo.appendChild(location);
+	const location = itemCreator('p', cardInfo, 'location', obj.location);
 
 	// Create the profile p with nested a tag
 	const profile = document.createElement('p');
@@ -121,27 +118,17 @@ const cardCreator = (obj) => {
 	profile.appendChild(profileSrc);
 
 	// Create the followers p
-	const followers = document.createElement('p');
-	followers.classList.add('followers');
-	followers.textContent = `Followers:  ${obj.followers}`;
-	cardInfo.appendChild(followers);
+	const followers = itemCreator('p', cardInfo, 'followers', `Followers: ${obj.followers}`);
 
 	// Create the following p tag
-	const following = document.createElement('p');
-	following.classList.add('following');
-	following.textContent = `Following:  ${obj.following}`;
-	cardInfo.appendChild(following);
+	const following = itemCreator('p', cardInfo, 'following', `Following: ${obj.following}`);
 
 	// Create the bio p tag
 	if (obj.bio !== null) {
-		const bio = document.createElement('p');
-		followers.classList.add('bio');
-		bio.textContent = `Bio:  ${obj.bio}`;
-		cardInfo.appendChild(bio);
+		const bio = itemCreator('p', cardInfo, 'bio', `Bio: ${obj.bio}`);
 	}
 
 	return card;
-	// container.appendChild(card);
 };
 
 /* List of LS Instructors Github username's: 
