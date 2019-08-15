@@ -61,29 +61,39 @@ const cardCreator = (obj) => {
 	// create the img element
 	const image = document.createElement('img');
 	image.src = obj.avatar_url;
-	// Append the image
 	card.appendChild(image);
 
 	// card info div
 	const cardInfo = document.createElement('div');
 	cardInfo.classList.add('card-info');
-	// Append card info
 	card.appendChild(cardInfo);
 
 	// create the name <h3>
 	const name = document.createElement('h3');
 	name.classList.add('name');
-	// Append name to the card info div
+	name.textContent = obj.name;
 	cardInfo.appendChild(name);
 
 	// Create the username p
 	const userName = document.createElement('p');
 	userName.classList.add('username');
+	userName.textContent = obj.login;
 	cardInfo.appendChild(userName);
 
 	// Create the location p
+	const location = document.createElement('p');
+	location.classList.add('location');
+	location.textContent = obj.location;
+	cardInfo.appendChild(location);
 
 	// Create the profile p with nested a tag
+	const profile = document.createElement('p');
+	profile.textContent = 'Profile: ';
+	cardInfo.appendChild(profile);
+	// Nested a tag
+	const profileSrc = document.createElement('a');
+	profileSrc.src = obj.html_url;
+	profile.appendChild(profileSrc);
 
 	// Create the followers p
 
