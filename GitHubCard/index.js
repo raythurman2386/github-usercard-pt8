@@ -91,25 +91,18 @@ const cardCreator = (obj) => {
 	const card = document.createElement('div');
 	card.classList.add('card', 'animated', 'zoomIn');
 
-
 	// create the img element
 	const image = itemCreator('img', card)
 	image.src = obj.avatar_url;
 
 	// card info div
 	const cardInfo = itemCreator('div', card, 'card-info');
-	
+
 	// create the name <h3>
-	const name = document.createElement('h3');
-	name.classList.add('name');
-	name.textContent = obj.name;
-	cardInfo.appendChild(name);
+	const name = itemCreator('h3', cardInfo, 'name', obj.name);
 
 	// Create the username p
-	const userName = document.createElement('p');
-	userName.classList.add('username');
-	userName.textContent = obj.login;
-	cardInfo.appendChild(userName);
+	const userName = itemCreator('p', cardInfo, 'username', obj.login);
 
 	// Create the location p
 	const location = document.createElement('p');
