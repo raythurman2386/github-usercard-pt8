@@ -8,7 +8,7 @@ function getData(user) {
 		.get(`https://api.github.com/users/${user}`)
 		.then((res) => {
 			const data = res.data;
-			// console.log(data);
+			console.log(data.followers);
 			const card = cardCreator(data);
 			container.appendChild(card);
 		})
@@ -133,10 +133,12 @@ const cardCreator = (obj) => {
 	cardInfo.appendChild(following);
 
 	// Create the bio p tag
-	const bio = document.createElement('p');
-	followers.classList.add('bio');
-	bio.textContent = `Bio:  ${obj.bio}`;
-	cardInfo.appendChild(bio);
+	if (obj.bio !== null) {
+		const bio = document.createElement('p');
+		followers.classList.add('bio');
+		bio.textContent = `Bio:  ${obj.bio}`;
+		cardInfo.appendChild(bio);
+	}
 
 	return card;
 };
