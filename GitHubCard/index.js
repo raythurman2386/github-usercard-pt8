@@ -80,7 +80,8 @@ button.addEventListener('click', () => {
 const cardCreator = (obj) => {
 	// create the card div element
 	const card = document.createElement('div');
-	card.classList.add('card');
+	card.classList.add('card', 'animated', 'zoomIn');
+
 
 	// create the img element
 	const image = document.createElement('img');
