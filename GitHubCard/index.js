@@ -5,7 +5,7 @@
 axios
 	.get(`https://api.github.com/users/raythurman2386`)
 	.then((res) => {
-		console.log(res);
+		console.log(res.data);
 	})
 	.catch((error) => {
 		console.log(error);
@@ -52,6 +52,12 @@ const followersArray = [ 'miklo88', 'nickdurbin', 'timothyshores', 'tetondan', '
   </div>
 </div>
 */
+
+const cardCreator = (obj) => {
+	// create the card div element
+	const card = document.createElement('div');
+	card.classList.add('card');
+};
 
 /* List of LS Instructors Github username's: 
   tetondan
