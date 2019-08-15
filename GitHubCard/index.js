@@ -1,3 +1,4 @@
+const container = document.querySelector('.cards');
 /* Step 1: using axios, send a GET request to the following URL 
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
@@ -5,7 +6,10 @@
 axios
 	.get(`https://api.github.com/users/raythurman2386`)
 	.then((res) => {
-		console.log(res.data);
+		const data = res.data;
+		console.log(data);
+		const card = cardCreator(data);
+		container.appendChild(card);
 	})
 	.catch((error) => {
 		console.log(error);
@@ -93,13 +97,28 @@ const cardCreator = (obj) => {
 	// Nested a tag
 	const profileSrc = document.createElement('a');
 	profileSrc.src = obj.html_url;
+	profileSrc.textContent = obj.html_url;
 	profile.appendChild(profileSrc);
 
 	// Create the followers p
+	const followers = document.createElement('p');
+	followers.classList.add('followers');
+	followers.textContent = `Followers:  ${obj.followers}`;
+	cardInfo.appendChild(followers);
 
 	// Create the following p tag
+	const following = document.createElement('p');
+	following.classList.add('following');
+	following.textContent = `Following:  ${obj.following}`;
+	cardInfo.appendChild(following);
 
 	// Create the bio p tag
+	const bio = document.createElement('p');
+	followers.classList.add('bio');
+	bio.textContent = `Bio:  ${obj.bio}`;
+	cardInfo.appendChild(bio);
+
+	return card;
 };
 
 /* List of LS Instructors Github username's: 
