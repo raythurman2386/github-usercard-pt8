@@ -77,13 +77,13 @@ button.addEventListener('click', () => {
 </div>
 */
 
-const elementCreator = (element, content, name, append ) => {
-	let element = document.createElement(element);
-	element.textContent = content;
-	append.appendChild(element);
-	element.classList.add(name);
+const itemCreator = (element, parent, name, content) => {
+	let item = document.createElement(element);
+	parent.appendChild(item);
+	item.classList.add(name);
+	item.textContent = content;
 
-	return element;
+	return item;
 }
 
 const cardCreator = (obj) => {
@@ -93,9 +93,10 @@ const cardCreator = (obj) => {
 
 
 	// create the img element
-	const image = document.createElement('img');
+	const image = itemCreator('img', card)
+	// document.createElement('img');
 	image.src = obj.avatar_url;
-	card.appendChild(image);
+	// card.appendChild(image);
 
 	// card info div
 	const cardInfo = document.createElement('div');
