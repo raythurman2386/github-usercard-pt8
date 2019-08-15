@@ -8,9 +8,7 @@ function getData(user) {
 	axios
 		.get(`https://api.github.com/users/${user}`)
 		.then((res) => {
-			const data = res.data;
-			// console.log(data);
-			const card = cardCreator(data);
+			const card = cardCreator(res.data);
 			container.appendChild(card);
 		})
 		.catch((error) => {
@@ -24,14 +22,12 @@ getData('raythurman2386');
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
 
-   Skip to Step 3.
-*/
-
-/* Step 4: Pass the data received from Github into your function, 
+	 Skip to Step 3.
+	 
+   Step 4: Pass the data received from Github into your function, 
            create a new component and add it to the DOM as a child of .cards
-*/
 
-/* Step 5: Now that you have your own card getting added to the DOM, either 
+   Step 5: Now that you have your own card getting added to the DOM, either 
           follow this link in your browser https://api.github.com/users/<Your github name>/followers 
           , manually find some other users' github handles, or use the list found 
           at the bottom of the page. Get at least 5 different Github usernames and add them as
@@ -56,7 +52,6 @@ button.addEventListener('click', () => {
 	sectionArray.forEach((user) => {
 	getData(user);
 })})
-
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
