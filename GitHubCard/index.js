@@ -92,7 +92,7 @@ const cardCreator = (obj) => {
 	card.classList.add('card', 'animated', 'zoomIn');
 
 	// create the img element
-	const image = itemCreator('img', card)
+	const image = itemCreator('img', card);
 	image.src = obj.avatar_url;
 
 	// card info div
@@ -108,15 +108,10 @@ const cardCreator = (obj) => {
 	const location = itemCreator('p', cardInfo, 'location', obj.location);
 
 	// Create the profile p with nested a tag
-	const profile = document.createElement('p');
-	profile.textContent = 'Profile: ';
-	cardInfo.appendChild(profile);
+	const profile = itemCreator('p', cardInfo, 'profile', 'Profile: ');
 	
 	// Nested a tag
-	const profileSrc = document.createElement('a');
-	profileSrc.src = obj.html_url;
-	profileSrc.textContent = obj.html_url;
-	profile.appendChild(profileSrc);
+	const profileSrc = itemCreator('a', profile, 'profileA', obj.html_url);
 
 	// Create the followers p
 	const followers = itemCreator('p', cardInfo, 'followers', `Followers: ${obj.followers}`);
