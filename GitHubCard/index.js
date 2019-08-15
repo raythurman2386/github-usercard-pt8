@@ -111,6 +111,7 @@ const cardCreator = (obj) => {
 	const profile = document.createElement('p');
 	profile.textContent = 'Profile: ';
 	cardInfo.appendChild(profile);
+	
 	// Nested a tag
 	const profileSrc = document.createElement('a');
 	profileSrc.src = obj.html_url;
