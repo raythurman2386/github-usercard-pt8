@@ -69,6 +69,27 @@ const cardCreator = (obj) => {
 	cardInfo.classList.add('card-info');
 	// Append card info
 	card.appendChild(cardInfo);
+
+	// create the name <h3>
+	const name = document.createElement('h3');
+	name.classList.add('name');
+	// Append name to the card info div
+	cardInfo.appendChild(name);
+
+	// Create the username p
+	const userName = document.createElement('p');
+	userName.classList.add('username');
+	cardInfo.appendChild(userName);
+
+	// Create the location p
+
+	// Create the profile p with nested a tag
+
+	// Create the followers p
+
+	// Create the following p tag
+
+	// Create the bio p tag
 };
 
 /* List of LS Instructors Github username's: 
