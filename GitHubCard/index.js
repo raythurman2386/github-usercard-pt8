@@ -94,15 +94,11 @@ const cardCreator = (obj) => {
 
 	// create the img element
 	const image = itemCreator('img', card)
-	// document.createElement('img');
 	image.src = obj.avatar_url;
-	// card.appendChild(image);
 
 	// card info div
-	const cardInfo = document.createElement('div');
-	cardInfo.classList.add('card-info');
-	card.appendChild(cardInfo);
-
+	const cardInfo = itemCreator('div', card, 'card-info');
+	
 	// create the name <h3>
 	const name = document.createElement('h3');
 	name.classList.add('name');
