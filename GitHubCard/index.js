@@ -8,7 +8,7 @@ function getData(user) {
 		.get(`https://api.github.com/users/${user}`)
 		.then((res) => {
 			const data = res.data;
-			console.log(data.followers);
+			// console.log(data);
 			const card = cardCreator(data);
 			container.appendChild(card);
 		})
@@ -141,6 +141,7 @@ const cardCreator = (obj) => {
 	}
 
 	return card;
+	// container.appendChild(card);
 };
 
 /* List of LS Instructors Github username's: 
