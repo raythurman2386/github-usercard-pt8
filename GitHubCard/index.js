@@ -57,6 +57,10 @@ const cardCreator = (obj) => {
 	// create the card div element
 	const card = document.createElement('div');
 	card.classList.add('card');
+
+	// create the img element
+	const image = document.createElement('img');
+	image.src = obj.avatar_url;
 };
 
 /* List of LS Instructors Github username's: 
