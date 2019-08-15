@@ -1,4 +1,5 @@
 const container = document.querySelector('.cards');
+const button = document.querySelector('.button');
 /* Step 1: using axios, send a GET request to the following URL 
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
@@ -51,12 +52,11 @@ const sectionArray = [
 	'Sherexmykes',
 ];
 
-setTimeout(
+button.addEventListener('click', () => {
 	sectionArray.forEach((user) => {
-		getData(user);
-	}),
-	1000,
-);
+	getData(user);
+})})
+
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:

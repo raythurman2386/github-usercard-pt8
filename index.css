@@ -169,6 +169,10 @@ body {
 	font-size: 48px;
 }
 
+.button {
+	margin: 10px 0;
+}
+
 .cards {
 	width: 100%;
 }
