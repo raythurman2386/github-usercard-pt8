@@ -119,7 +119,14 @@ const cardCreator = (obj) => {
 		const bio = itemCreator('p', cardInfo, 'bio', `Bio: ${obj.bio}`);
 	}
 
+	// Stretch goal
 	const expand = itemCreator('span', cardInfo, 'expandBtn', 'Expand');
+	const calendar = itemCreator('div', cardInfo, 'calendar');
+	const randomText = itemCreator('h1', calendar, 'random', 'Holy crap look at that!!!');
+
+	expand.addEventListener('click', ()=>{
+		calendar.classList.toggle('calendar--open');
+	});
 
 	return card;
 };
