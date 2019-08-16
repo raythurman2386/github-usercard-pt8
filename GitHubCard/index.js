@@ -106,7 +106,7 @@ const cardCreator = (obj) => {
 	const profile = itemCreator('p', cardInfo, 'profile', 'Profile: ');
 	
 	// Nested a tag
-	const profileSrc = itemCreator('a', profile, 'profileA', obj.html_url);
+	const profileSrc = itemCreator('a', profile, 'profileSrc', obj.html_url);
 
 	// Create the followers p
 	const followers = itemCreator('p', cardInfo, 'followers', `Followers: ${obj.followers}`);
