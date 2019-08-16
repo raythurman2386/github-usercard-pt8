@@ -119,6 +119,8 @@ const cardCreator = (obj) => {
 		const bio = itemCreator('p', cardInfo, 'bio', `Bio: ${obj.bio}`);
 	}
 
+	const expand = itemCreator('span', cardInfo, 'expandBtn', 'Expand');
+
 	return card;
 };
 

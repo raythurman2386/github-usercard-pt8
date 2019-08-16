@@ -216,3 +216,8 @@ body {
 	font-style: italic;
 	margin: 3px 0 10px;
 }
+
+.expandBtn {
+	margin-left: 25%;
+	cursor: pointer;
+}
