@@ -144,7 +144,7 @@ body {
 	background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
 .container {
-	max-width: 800px;
+	max-width: 1200px;
 	margin: 50px auto;
 	padding: 30px;
 	display: flex;
@@ -231,7 +231,6 @@ body {
 
 .calendar {
 	display: none;
-	height: 50px;
 }
 
 .calendar--open {

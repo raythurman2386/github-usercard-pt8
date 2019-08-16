@@ -122,7 +122,8 @@ const cardCreator = (obj) => {
 	// Stretch goal
 	const expand = itemCreator('span', cardInfo, 'expandBtn', 'Expand');
 	const calendar = itemCreator('div', cardInfo, 'calendar');
-	const randomText = itemCreator('h1', calendar, 'random', 'Holy crap look at that!!!');
+	calendar.classList.add('calendar-responsive');
+	calendar.textContent = GitHubCalendar('.calendar', obj.login);
 
 	expand.addEventListener('click', ()=>{
 		calendar.classList.toggle('calendar--open');
