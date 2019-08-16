@@ -125,7 +125,7 @@ const cardCreator = (obj) => {
 	const expand = itemCreator('span', cardInfo, 'expandBtn', 'Expand');
 	const calendar = itemCreator('div', cardInfo, 'calendar');
 	calendar.classList.add('calendar-responsive');
-	calendar.textContent = GitHubCalendar('.calendar', obj.login);
+	calendar.textContent = GitHubCalendar(calendar, obj.login);
 
 	expand.addEventListener('click', ()=>{
 		calendar.classList.toggle('calendar--open');
